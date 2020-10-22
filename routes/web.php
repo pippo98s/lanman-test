@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/', 'ProductController@getProducts')->name('products');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/product/edit/{id}', 'ProductController@productEdit') -> name('product.edit') -> middleware('auth');
+Route::post('product/edit/{id}', 'ProductController@productUpdate') -> name('product.update') -> middleware('auth');
+Route::get('/product/delete/{id}', 'ProductController@productDelete') -> name('product.delete') -> middleware('auth');

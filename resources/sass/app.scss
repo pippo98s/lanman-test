@@ -1,1 +1,41 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+body {
+  background-color: #fff;
+  color: #636b6f;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+  margin: 0;
+}
+
+.content{
+  background-color: #636b6f;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .my-card{
+    width: 15rem;
+    height: 500px;
+    margin: 20px;
+    .my-card-body{
+      margin-top: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .my-card-desc{
+        height: 100px;
+        overflow-y: auto;
+      }
+    }
+  }
+}
